@@ -25,3 +25,17 @@ def add_task(tasks):
 	else:
 		print("Task name cannot be empty please add an input.")
 
+def remove_task(tasks):
+	display_tasks(tasks)
+	if not tasks:
+		return
+	try:
+		idx = int(input("Enter the task number to remove: "))
+		if 1 <= idx <= len(tasks):
+			removed = tasks.pop(idx - 1)
+			print(f"Removed: {removed['desc']}")
+		else:
+			print("Invalid task number.")
+	except ValueError:
+		print("Please enter a valid number.")
+
