@@ -17,3 +17,11 @@ def display_tasks(tasks):
 		status = "[✓]" if task['done'] else "[ ]"
 		print(f"{idx}. {status} {task['desc']}")
 
+def add_task(tasks):
+	desc = input("Enter the task name: ").strip()
+	if desc:
+		tasks.append({'desc': desc, 'done': False})
+		print("Task added.")
+	else:
+		print("Task name cannot be empty please add an input.")
+
