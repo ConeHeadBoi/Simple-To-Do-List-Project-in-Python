@@ -8,3 +8,12 @@ def display_menu():
 	print("4. Display all tasks")
 	print("5. Exit")
 
+def display_tasks(tasks):
+	if not tasks:
+		print("No tasks in the list.")
+		return
+	print("\nTo-Do List:")
+	for idx, task in enumerate(tasks, 1):
+		status = "[✓]" if task['done'] else "[ ]"
+		print(f"{idx}. {status} {task['desc']}")
+
