@@ -54,4 +54,24 @@ def mark_task(tasks):
 	except ValueError:
 		print("Please enter a valid number.")
 
+def main():
+	tasks = []
+	while True:
+		display_menu()
+		choice = input("Choose an option (1-5): ").strip()
+		if choice == '1':
+			add_task(tasks)
+		elif choice == '2':
+			remove_task(tasks)
+		elif choice == '3':
+			mark_task(tasks)
+		elif choice == '4':
+			display_tasks(tasks)
+		elif choice == '5':
+			print("Goodbye!")
+			sys.exit()
+		else:
+			print("Invalid choice. Please select 1-5.")
 
+if __name__ == "__main__":
+	main()
