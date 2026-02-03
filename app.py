@@ -39,3 +39,19 @@ def remove_task(tasks):
 	except ValueError:
 		print("Please enter a valid number.")
 
+def mark_task(tasks):
+	display_tasks(tasks)
+	if not tasks:
+		return
+	try:
+		idx = int(input("Enter the task number to mark/unmark: "))
+		if 1 <= idx <= len(tasks):
+			tasks[idx - 1]['done'] = not tasks[idx - 1]['done']
+			status = "done" if tasks[idx - 1]['done'] else "not done"
+			print(f"Task marked as {status}.")
+		else:
+			print("Invalid task number.")
+	except ValueError:
+		print("Please enter a valid number.")
+
+
